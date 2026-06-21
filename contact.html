@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 孙风潇</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="navbar.js" defer></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html#profile-section" class="navbar-logo">孙风潇 | Fengxiao Sun</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="research.html" class="nav-link">研究领域</a></li>
+                <li class="nav-item"><a href="publications.html" class="nav-link">论文发表</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 页面内容 -->
+    <main class="main-content">
+        <div class="container">
+            <h1>联系我们</h1>
+
+            <!-- 学生招募 -->
+            <section class="collaboration-section">
+                <h2>欢迎加入</h2>
+                <div class="collaboration-card">
+                    <p>每年拟招收博士及硕士研究生1-2名，欢迎物理、光学、量子信息、计算机等相关专业背景的学生积极联系，欢迎本科或其他科研实习的同学前来学习工作。</p>
+                </div>
+            </section>
+
+            <!-- 联系方式 -->
+            <section class="contact-info-section">
+                <h2>联系方式</h2>
+                <div class="contact-info-grid">
+                    <!-- 办公地点 -->
+                    <div class="contact-info-card">
+                        <h3>办公地点</h3>
+                        <p>
+                            北京邮电大学沙河校区理学楼317办公室
+                        </p>
+                    </div>
+
+                    <!-- 电子邮箱 -->
+                    <div class="contact-info-card">
+                        <h3>电子邮箱</h3>
+                        <p>
+                            <a href="mailto:sunfengxiao@bupt.edu.cn">sunfengxiao@bupt.edu.cn</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- 学术链接 -->
+            <section class="social-section">
+                <h2>学术链接</h2>
+                <div class="social-links">
+                    <a href="https://scholar.google.com/citations?user=nCnsZlAAAAAJ&hl=en" class="social-link" title="Google Scholar" target="_blank">
+                        <img src="imag/gs.png" alt="Google Scholar" class="social-icon-img">
+                        <span>Google Scholar</span>
+                    </a>
+                    <a href="https://webofscience.clarivate.cn/wos/author/record/AAL-3942-2020" class="social-link" title="Web of Science" target="_blank">
+                        <img src="imag/WOS.png" alt="Web of Science" class="social-icon-img">
+                        <span>Web of Science</span>
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Fengxiao-Sun" class="social-link" title="ResearchGate" target="_blank">
+                        <img src="imag/RG.png" alt="ResearchGate" class="social-icon-img">
+                        <span>ResearchGate</span>
+                    </a>
+                    <a href="https://orcid.org/0000-0002-5454-413X" class="social-link" title="ORCID" target="_blank">
+                        <img src="imag/ID.png" alt="ORCID" class="social-icon-img">
+                        <span>ORCID</span>
+                    </a>
+                </div>
+            </section>
+
+
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>&copy; 2026 孙风潇 | Fengxiao Sun. All rights reserved.</p>
+    </footer>
+
+<script>window.parent.postMessage({ action: "ready" }, "*"); 
+ 
+window.console = new Proxy(console, {
+  get(target, prop) {
+    if (['log', 'warn', 'error'].includes(prop)) {
+      return new Proxy(target[prop], {
+        apply(fn, thisArg, args) {
+          fn.apply(thisArg, args);
+          window.parent.postMessage({ action: 'console', 
+            type: prop, 
+            args: args.map((arg) => {
+              try {
+                return JSON.stringify(arg).replace(/^["']|["']$/g, '');
+              } catch (e) {
+                return arg;
+              }
+            }) 
+          }, '*');
+        }
+      });
+    }
+    return target[prop];
+  }
+});
+</script></body>
+</html>
