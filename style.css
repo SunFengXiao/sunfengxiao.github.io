@@ -597,6 +597,13 @@ h4 {
   margin-bottom: var(--spacing-2xl);
 }
 
+.stats-update-note {
+  margin: calc(-1 * var(--spacing-lg)) 0 var(--spacing-xl);
+  color: var(--text-light);
+  font-size: 0.8em;
+  text-align: right;
+}
+
 .stat-card {
   background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
   color: white;
