@@ -106,8 +106,12 @@ a:hover {
   display: flex;
   list-style: none;
   gap: var(--spacing-sm);
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   justify-content: center;
+}
+
+.nav-language-item {
+  margin-left: auto;
 }
 
 .nav-item {
@@ -1004,6 +1008,7 @@ h4 {
 
   .nav-menu {
     flex-wrap: wrap;
+    margin-left: 0;
     justify-content: center;
     gap: var(--spacing-md);
   }
@@ -1132,4 +1137,24 @@ h4 {
   .timeline-dot {
     left: -12px;
   }
+}
+@media (min-width: 769px) {
+  .profile-card-en {
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .profile-card-en .profile-title {
+    white-space: nowrap;
+  }
+}
+@media (max-width: 768px) {
+  .nav-language-item {
+    margin-left: 0;
+  }
+}
+
+.project-list-stacked {
+  grid-template-columns: 1fr;
 }
