@@ -1053,7 +1053,6 @@ h4 {
   .links-grid,
   .research-grid,
   .project-list,
-  .publication-stats,
   .contact-grid,
   .contact-info-grid,
   .awards-grid,
@@ -1061,9 +1060,13 @@ h4 {
     grid-template-columns: 1fr;
   }
 
-  /* 平板上研究卡片保持横向但调整为2列 */
-  .research-grid {
+  .publication-stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 平板上研究卡片保持三列横向分布 */
+  .research-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1157,4 +1160,9 @@ h4 {
 
 .project-list-stacked {
   grid-template-columns: 1fr;
+}
+@media (max-width: 480px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
 }
